@@ -1,7 +1,6 @@
 import unittest
 import numpy as np
-# app.py dosyasından test edeceğimiz fonksiyonları import ediyoruz
-# Eğer import hatası alırsan try-except bloğu devreye girer
+
 try:
     from app import clean_input_text, get_prediction 
 except ImportError:
@@ -30,8 +29,6 @@ class TestModelFunctions(unittest.TestCase):
     def test_cleaning_functionality(self):
         """clean_input_text fonksiyonunun gürültüyü doğru temizlediğini test eder."""
         
-        # DÜZELTİLEN KISIM: Kodumuz [and] kısmını tamamen sildiği için
-        # Beklenen metinden 'and' kelimesini çıkardık.
         dirty_text = "This is a Test! (with brackets [and] symbols) and S P A C E S. %10"
         expected_clean = "this is a test with brackets symbols and s p a c e s %10"
         
